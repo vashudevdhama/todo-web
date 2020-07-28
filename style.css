@@ -1,0 +1,143 @@
+:root {
+  --main-bg-color: #61dbfb;
+  --main-tile-color: #3d4048;
+  --faded-white-color: #80858f;
+  --bright-white-color: #cdd1d6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: var(--bright-white-color);
+  background-color: var(--main-bg-color);
+}
+
+.main {
+  width: 800px;
+  height: 800px;
+  margin: auto;
+  margin-top: 3rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--main-tile-color);
+  border-radius: 5px;
+  -moz-box-shadow: 4px 4px 6px 7px #51b7d1;
+  -webkit-box-shadow: 4px 4px 6px 7px #51b7d1;
+  box-shadow: 4px 4px 6px 7px #75c4d8;
+}
+/* #root {
+  width: 800px;
+  height: 800px;
+  margin: auto;
+  padding: 1rem 1.5rem;
+  background-color: var(--main-tile-color);
+} */
+
+form {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+[type="text"],
+button {
+  display: inline-block;
+  -webkit-appearance: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  border: 2px solid #007bff;
+  margin: 0 0.5rem;
+}
+
+[type="text"] {
+  width: 100%;
+}
+
+[type="text"]:active,
+[type="text"]:focus {
+  outline: 0;
+  border: 2px solid #007bff;
+}
+
+[type="checkbox"] {
+  margin-right: 1rem;
+  font-size: 2rem;
+  height: 25px;
+  width: 25px;
+  background-color: var(--bright-white-color);
+}
+
+h1 {
+  color: var(--bright-white-color);
+}
+
+.list-area {
+  background-color: burlywood;
+}
+ul {
+  padding: 0;
+  background-color: var(--main-tile-color);
+  max-height: 550px;
+  overflow: auto;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--bright-white-color);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--faded-white-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-bg-color);
+}
+li {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: var(--main-tile-color);
+
+  color: var(--bright-white-color);
+}
+
+li span {
+  display: inline-block;
+  padding: 0.5rem;
+  width: 250px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  border-bottom: 1px solid var(--faded-white-color);
+}
+
+li span:hover {
+  background: rgba(179, 215, 255, 0.52);
+}
+
+li span:focus {
+  outline: 0;
+  border: 2px solid #007bff;
+  background: rgba(179, 207, 255, 0.52);
+}

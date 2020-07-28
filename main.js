@@ -59,9 +59,24 @@ class View {
     // Root element
     this.app = this.getElement("#root");
 
-    // Heading
+    // Date as heading.
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, "0");
+    let day = today.getDay();
+    let mm = today.toLocaleString("default", { month: "long" });
+    // let yyyy = today.getFullYear();
+    let days = [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ];
+    today = days[day - 1] + ", " + mm + " " + dd;
     this.title = this.createElement("h1");
-    this.title.textContent = "Todos";
+    this.title.textContent = today;
 
     // Form to take user input
     this.form = this.createElement("form");
@@ -75,13 +90,15 @@ class View {
     this.submitButton.textContent = "Submit";
 
     // List for todos
+    this.listArea = this.createElement("div", "list-area");
     this.todoList = this.createElement("ul", "todo-list");
 
+    this.listArea.append(this.todoList);
     // Make [this.input] and [this.submitButton] child of [this.form].
     this.form.append(this.input, this.submitButton);
 
     // Make [this.title], [this.form] and [this.todoList] child of [this.app]
-    this.app.append(this.title, this.form, this.todoList);
+    this.app.append(this.title, this.form, this.listArea);
 
     this._temporaryTodoText = "";
     this._initLocalListeners();
